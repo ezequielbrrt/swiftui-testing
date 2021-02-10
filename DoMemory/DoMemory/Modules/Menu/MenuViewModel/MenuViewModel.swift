@@ -1,0 +1,89 @@
+//
+//  MenuViewModel.swift
+//  DoMemory
+//
+//  Created by Ezequiel Barreto on 23/09/20.
+//
+
+import SwiftUI
+import FirebaseDatabase
+import FirebaseAuth
+import CodableFirebase
+
+class MenuViewModel: ObservableObject {
+    @Published var memoramaArray: [Memorama] = []
+    @Published var isLoading: Bool = false
+
+    init() {
+        ref = Database.database().reference()
+        isLoading = true
+        getPoints()
+        difficulty = getDifficulty()
+        getData()
+    }
+    
+    public func getUserPoints() -> String {
+        return String(points)
+    }
+        
+    // MARK: Private
+    private var ref: DatabaseReference!
+    private var difficulty: Difficulty!
+    private var points: Int!
+    private var allGames: [Memorama] = []
+}
+
+extension MenuViewModel: SettingsListener {
+    func onCloseView() {
+        let auxDifficulty = getDifficulty()
+        if auxDifficulty != self.difficulty {
+            self.memoramaArray = allGames.filter { memorama in
+                let difficultyEnum = Difficulty(rawValue: memorama.dificulty) ?? .medium
+                return difficultyEnum == self.difficulty
+            }
+            self.difficulty = auxDifficulty
+        }
+    }
+}
+
+// MARK: INTERNAL DATA
+extension MenuViewModel {
+    private func getPoints() {
+        guard let userSettings = UserManageObject().getUserSettings() else { return  }
+        points = Int(userSettings.points)
+    }
+    
+    private func getDifficulty() -> Difficulty {
+        guard let userSettings = UserManageObject().getUserSettings() else { return .medium }
+        return Difficulty(rawValue: userSettings.dificulty ?? "medium") ?? .medium
+    }
+}
+
+// MARK: External Data
+extension MenuViewModel {
+    private func getData() {
+        Auth.auth().signInAnonymously() { [weak self] (authResult, error) in
+            if let _ = authResult {
+                self?.ref.child("data-en").observeSingleEvent(of: .value) { [self] snapshot in
+                    do {
+                        let memoramaArrayAux = try FirebaseDecoder().decode([Memorama].self, from: snapshot.value ?? "")
+                        self?.allGames = memoramaArrayAux
+                        self?.memoramaArray = memoramaArrayAux.filter { memorama in
+                            let difficultyEnum = Difficulty(rawValue: memorama.dificulty) ?? .medium
+                            return difficultyEnum == self?.difficulty
+                        }
+                    } catch let error {
+                        print("error firebas")
+                        print(error)
+                    }
+                    self?.isLoading = false
+                }
+            }
+            else {
+                self?.isLoading = false
+            }
+            // Error do something
+        }
+    }
+}
+

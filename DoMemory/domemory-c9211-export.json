@@ -1,0 +1,36 @@
+{
+  "data-en" : [ {
+    "category" : "Test",
+    "description" : "This is a memorize game, that includes emojis to find, enjoy it!",
+    "dificulty" : "medium",
+    "id" : "M001",
+    "itemType" : "String",
+    "items" : [ "😀", "😅", "😇", "😘", "🥳", "😡", "🤪" ],
+    "name" : "Emojis",
+    "publishedDate" : "3-11-2020",
+    "isDoubleItem": true
+  },
+  {
+    "category" : "EMOJI Animals",
+    "description" : "Some animas with their names",
+    "dificulty" : "medium",
+    "id" : "M002",
+    "itemType" : "String",
+    "items" : [ "🐻", "bear", "🐷", "pig", "🐒", "monkey", "🦊", "fox",
+    "🦄", "unicorn", "🐬", "dolphin"],
+    "name" : "EMOJI ANIMALS",
+    "publishedDate" : "3-11-2020",
+    "isDoubleItem": false
+  }],
+  "data-es" : [ {
+    "category" : "Test",
+    "description" : "",
+    "dificulty" : "easy",
+    "id" : "M001",
+    "itemType" : "String",
+    "items" : [ "T" ],
+    "name" : "Emojis",
+    "publishedDate" : "3-11-2020",
+    "isDoubleItem": true
+  }]
+}
