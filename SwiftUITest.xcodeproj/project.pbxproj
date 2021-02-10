@@ -56,10 +56,10 @@
 			children = (
 				37D06F5625D367D6005CF62E /* SwiftUITestApp.swift */,
 				37D06F5825D367D6005CF62E /* ContentView.swift */,
+				37932D6625D467EE00F3A32A /* Hike.swift */,
 				37D06F5A25D367D9005CF62E /* Assets.xcassets */,
 				37D06F5F25D367D9005CF62E /* Info.plist */,
 				37D06F5C25D367D9005CF62E /* Preview Content */,
-				37932D6625D467EE00F3A32A /* Hike.swift */,
 			);
 			path = SwiftUITest;
 			sourceTree = "<group>";

@@ -16,10 +16,10 @@ struct Hike {
 extension Hike {
     static func all() -> [Hike] {
         [
-            Hike(name: "test", imateURL: "test", miles: 5),
-            Hike(name: "test2", imateURL: "test", miles: 5),
-            Hike(name: "test3", imateURL: "test", miles: 5),
-            Hike(name: "test4", imateURL: "test", miles: 5)
+            Hike(name: "test", imateURL: "sal", miles: 5),
+            Hike(name: "test2", imateURL: "sal", miles: 5),
+            Hike(name: "test3", imateURL: "sal", miles: 5),
+            Hike(name: "test4", imateURL: "sal", miles: 5)
         ]
     }
 }
