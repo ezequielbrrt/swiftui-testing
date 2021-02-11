@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3701144F25D5DCB7006B1560 /* HikeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3701144E25D5DCB7006B1560 /* HikeDetail.swift */; };
+		3701145325D5E1B6006B1560 /* HikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3701145225D5E1B6006B1560 /* HikeList.swift */; };
 		37932D6725D467EE00F3A32A /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37932D6625D467EE00F3A32A /* Hike.swift */; };
 		37D06F5725D367D6005CF62E /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D06F5625D367D6005CF62E /* SwiftUITestApp.swift */; };
 		37D06F5925D367D6005CF62E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D06F5825D367D6005CF62E /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		3701144E25D5DCB7006B1560 /* HikeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetail.swift; sourceTree = "<group>"; };
+		3701145225D5E1B6006B1560 /* HikeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeList.swift; sourceTree = "<group>"; };
 		37932D6625D467EE00F3A32A /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
 		37D06F5325D367D6005CF62E /* SwiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D06F5625D367D6005CF62E /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 			children = (
 				37932D6625D467EE00F3A32A /* Hike.swift */,
 				3701144E25D5DCB7006B1560 /* HikeDetail.swift */,
+				3701145225D5E1B6006B1560 /* HikeList.swift */,
 			);
 			path = Hike;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37932D6725D467EE00F3A32A /* Hike.swift in Sources */,
+				3701145325D5E1B6006B1560 /* HikeList.swift in Sources */,
 				37D06F5925D367D6005CF62E /* ContentView.swift in Sources */,
 				37D06F5725D367D6005CF62E /* SwiftUITestApp.swift in Sources */,
 				3701144F25D5DCB7006B1560 /* HikeDetail.swift in Sources */,

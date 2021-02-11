@@ -11,41 +11,10 @@ struct ContentView: View {
     let hikes = Hike.all()
     
     var body: some View {
-        NavigationView {
-            List(self.hikes, id: \.name) { hike in
-                NavigationLink(destination: HikeDetail(hike: hike)) {
-                    HikeCell(hike: hike)
-                }
-                
-            }
-            
-            .navigationTitle("Hikings")
-        }
+        Text("")
         
     }
 }
-
-
-struct HikeCell: View {
-    let hike: Hike
-    
-    var body: some View {
-        HStack {
-            Image(hike.imateURL)
-                .resizable()
-                .frame(width: 100, height: 100)
-                .cornerRadius(16)
-            
-            VStack(alignment: .leading) {
-                Text(hike.name)
-                    .font(.title)
-                
-                Text(String(format: "%.2f", hike.miles))
-            }
-        }
-    }
-}
-
 
 
 struct ContentView_Previews: PreviewProvider {
